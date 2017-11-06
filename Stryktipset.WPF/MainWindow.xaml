@@ -5,8 +5,197 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Stryktipset.WPF"
         mc:Ignorable="d"
-        Title="Stryktipset" Height="350" Width="525">
+        Title="Stryktipset" Height="650" Width="1050">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="105*"/>
+            <ColumnDefinition Width="412*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl HorizontalAlignment="Left" Height="638" VerticalAlignment="Top" Width="1034" Grid.ColumnSpan="2">
+            <TabItem Header="Main">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Input">
+                <Grid Background="#FFE5E5E5" Margin="0,-0.519,0,0.519">
+                    <Grid x:Name="ResultGrid" Margin="10,23,939,198">
+                        <Grid.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFD66211" Offset="0"/>
+                                <GradientStop Color="#FFD47B0F" Offset="0.527"/>
+                            </LinearGradientBrush>
+                        </Grid.Background>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top"/>
+                        <TextBox x:Name="ResultOne" HorizontalAlignment="Left" Height="23" Margin="28,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top"/>
+                        <TextBox x:Name="ResultTwo" HorizontalAlignment="Left" Height="23" Margin="28,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31"  TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,78,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top"/>
+                        <TextBox x:Name="ResultThree" HorizontalAlignment="Left" Height="23" Margin="28,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31"  TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,106,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top"/>
+                        <TextBox x:Name="ResultFour" HorizontalAlignment="Left" Height="23" Margin="28,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31"  TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,134,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top"/>
+                        <TextBox x:Name="ResultFive" HorizontalAlignment="Left" Height="23" Margin="28,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,162,0,0" TextWrapping="Wrap" Text="6" VerticalAlignment="Top"/>
+                        <TextBox x:Name="ResultSix" HorizontalAlignment="Left" Height="23" Margin="28,162,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,190,0,0" TextWrapping="Wrap" Text="7" VerticalAlignment="Top"/>
+                        <TextBox x:Name="ResultSeven" HorizontalAlignment="Left" Height="23" Margin="28,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,218,0,0" TextWrapping="Wrap" Text="8" VerticalAlignment="Top"/>
+                        <TextBox x:Name="ResultEight" HorizontalAlignment="Left" Height="23" Margin="28,218,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,246,0,0" TextWrapping="Wrap" Text="9" VerticalAlignment="Top"/>
+                        <TextBox x:Name="ResultNine" HorizontalAlignment="Left" Height="23" Margin="28,246,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,274,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top"/>
+                        <TextBox x:Name="ResultTen" HorizontalAlignment="Left" Height="23" Margin="28,274,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,302,0,0" TextWrapping="Wrap" Text="11" VerticalAlignment="Top"/>
+                        <TextBox x:Name="ResultEleven" HorizontalAlignment="Left" Height="23" Margin="28,302,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,330,0,0" TextWrapping="Wrap" Text="12" VerticalAlignment="Top"/>
+                        <TextBox x:Name="ResultTwelve" HorizontalAlignment="Left" Height="23" Margin="28,330,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,358,0,0" TextWrapping="Wrap" Text="13" VerticalAlignment="Top"/>
+                        <TextBox x:Name="ResultThirteen" HorizontalAlignment="Right" Height="23" Margin="0,358,20,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
+                    </Grid>
+                    <Grid x:Name="PercentGrid" Margin="94,23,783,198">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="376*"/>
+                            <RowDefinition Height="13*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                <GradientStop Color="#FF1E9518"/>
+                                <GradientStop Color="#FF14C534" Offset="0.667"/>
+
+                            </LinearGradientBrush>
+                        </Grid.Background>
+                        <TextBox x:Name="PercentOne_One" HorizontalAlignment="Left" Height="23" Margin="28,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentOne_X" HorizontalAlignment="Left" Height="23" Margin="64,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentOne_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent" />
+                        <TextBlock HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="13"><Run Text="1"/><Run Text="&#x9;"/></TextBlock>
+                        <TextBox x:Name="PercentTwo_One" HorizontalAlignment="Left" Height="23" Margin="28,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentTwo_X" HorizontalAlignment="Left" Height="23" Margin="64,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentTwo_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top"/>
+                        <TextBox x:Name="PercentThree_One" HorizontalAlignment="Left" Height="23" Margin="28,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentThree_X" HorizontalAlignment="Left" Height="23" Margin="64,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentThree_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,78,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top"/>
+                        <TextBox x:Name="PercentFour_One" HorizontalAlignment="Left" Height="23" Margin="28,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentFour_X" HorizontalAlignment="Left" Height="23" Margin="64,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentFour_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,106,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top"/>
+                        <TextBox x:Name="PercentFive_One" HorizontalAlignment="Left" Height="23" Margin="28,133.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentFive_X" HorizontalAlignment="Left" Height="23" Margin="64,133.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentFive_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,133.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,133.953,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="13"><Run Text="5"/><Run Text="&#x9;"/></TextBlock>
+                        <TextBox x:Name="PercentSix_One" HorizontalAlignment="Left" Height="23" Margin="28,161.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentSix_X" HorizontalAlignment="Left" Height="23" Margin="64,161.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentSix_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,161.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,161.952,0,0" TextWrapping="Wrap" Text="6" VerticalAlignment="Top"/>
+                        <TextBox x:Name="PercentSeven_One" HorizontalAlignment="Left" Height="23" Margin="28,189.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentSeven_X" HorizontalAlignment="Left" Height="23" Margin="64,189.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentSeven_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,189.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,189.952,0,0" TextWrapping="Wrap" Text="7" VerticalAlignment="Top"/>
+                        <TextBox x:Name="PercentEight_One" HorizontalAlignment="Left" Height="23" Margin="28,217.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentEight_X" HorizontalAlignment="Left" Height="23" Margin="64,217.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentEight_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,217.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,217.952,0,0" TextWrapping="Wrap" Text="8" VerticalAlignment="Top"/>
+                        <TextBox x:Name="PercentNine_One" HorizontalAlignment="Left" Height="23" Margin="28,245.888,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentNine_X" HorizontalAlignment="Left" Height="23" Margin="64,245.888,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentNine_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,245.888,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,245.886,0,0" TextWrapping="Wrap" Text="9" VerticalAlignment="Top"/>
+                        <TextBox x:Name="PercentTen_One" HorizontalAlignment="Left" Height="23" Margin="28,273.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentTen_X" HorizontalAlignment="Left" Height="23" Margin="64,273.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentTen_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,273.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,273.841,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="13" Text="10"/>
+                        <TextBox x:Name="PercentEleven_One" HorizontalAlignment="Left" Height="23" Margin="28,301.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentEleven_X" HorizontalAlignment="Left" Height="23" Margin="64,301.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentEleven_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,301.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,301.838,0,0" TextWrapping="Wrap" Text="11" VerticalAlignment="Top"/>
+                        <TextBox x:Name="PercentTwelve_One" HorizontalAlignment="Left" Height="23" Margin="28,329.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentTwelve_X" HorizontalAlignment="Left" Height="23" Margin="64,329.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentTwelve_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,329.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,329.838,0,0" TextWrapping="Wrap" Text="12" VerticalAlignment="Top"/>
+                        <TextBox x:Name="PercentThirteen_One" HorizontalAlignment="Left" Height="23" Margin="28,357.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" Grid.RowSpan="2" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentThirteen_X" HorizontalAlignment="Left" Height="23" Margin="64,357.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" Grid.RowSpan="2" TextChanged="CalculateAndValidatePercent" />
+                        <TextBox x:Name="PercentThirteen_Two" HorizontalAlignment="Left" Height="23" Margin="99,358,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" Grid.RowSpan="2" GotFocus="CalculateAndValidatePercent"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,357.838,0,0" TextWrapping="Wrap" Text="13" VerticalAlignment="Top"/>
+                    </Grid>
+                    <Grid x:Name="RankGrid" Margin="250,23,627,198">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="376*"/>
+                            <RowDefinition Height="13*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                <GradientStop Color="#FFE6BF0F"/>
+                                <GradientStop Color="#FFEEE30E" Offset="0.667"/>
+
+                            </LinearGradientBrush>
+                        </Grid.Background>
+                        <TextBox x:Name="RankOne_One" HorizontalAlignment="Left" Height="23" Margin="28,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank" />
+                        <TextBox x:Name="RankOne_X" HorizontalAlignment="Left" Height="23" Margin="64,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankOne_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top"/>
+                        <TextBox x:Name="RankTwo_One" HorizontalAlignment="Left" Height="23" Margin="28,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankTwo_X" HorizontalAlignment="Left" Height="23" Margin="64,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankTwo_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top"/>
+                        <TextBox x:Name="RankThree_One" HorizontalAlignment="Left" Height="23" Margin="28,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankThree_X" HorizontalAlignment="Left" Height="23" Margin="64,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankThree_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,78,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top"/>
+                        <TextBox x:Name="RankFour_One" HorizontalAlignment="Left" Height="23" Margin="28,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankFour_X" HorizontalAlignment="Left" Height="23" Margin="64,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankFour_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,106,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top"/>
+                        <TextBox x:Name="RankFive_One" HorizontalAlignment="Left" Height="23" Margin="28,133.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankFive_X" HorizontalAlignment="Left" Height="23" Margin="64,133.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankFive_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,133.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,133.953,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top"/>
+                        <TextBox x:Name="RankSix_One" HorizontalAlignment="Left" Height="23" Margin="28,161.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankSix_X" HorizontalAlignment="Left" Height="23" Margin="64,161.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankSix_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,161.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,161.952,0,0" TextWrapping="Wrap" Text="6" VerticalAlignment="Top"/>
+                        <TextBox x:Name="RankSeven_One" HorizontalAlignment="Left" Height="23" Margin="28,189.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankSeven_X" HorizontalAlignment="Left" Height="23" Margin="64,189.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankSeven_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,189.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,189.952,0,0" TextWrapping="Wrap" Text="7" VerticalAlignment="Top"/>
+                        <TextBox x:Name="RankEight_One" HorizontalAlignment="Left" Height="23" Margin="28,217.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankEight_X" HorizontalAlignment="Left" Height="23" Margin="64,217.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankEight_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,217.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,217.952,0,0" TextWrapping="Wrap" Text="8" VerticalAlignment="Top"/>
+                        <TextBox x:Name="RankNine_One" HorizontalAlignment="Left" Height="23" Margin="28,245.888,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankNine_X" HorizontalAlignment="Left" Height="23" Margin="64,245.888,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankNine_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,245.888,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,245.886,0,0" TextWrapping="Wrap" Text="9" VerticalAlignment="Top"/>
+                        <TextBox x:Name="RankTen_One" HorizontalAlignment="Left" Height="23" Margin="28,273.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankTen_X" HorizontalAlignment="Left" Height="23" Margin="64,273.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankTen_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,273.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,273.841,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="13" Text="10"/>
+                        <TextBox x:Name="RankEleven_One" HorizontalAlignment="Left" Height="23" Margin="28,301.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankEleven_X" HorizontalAlignment="Left" Height="23" Margin="64,301.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankEleven_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,301.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,301.838,0,0" TextWrapping="Wrap" Text="11" VerticalAlignment="Top"/>
+                        <TextBox x:Name="RankTwelve_One" HorizontalAlignment="Left" Height="23" Margin="28,329.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankTwelve_X" HorizontalAlignment="Left" Height="23" Margin="64,329.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankTwelve_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,329.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,329.838,0,0" TextWrapping="Wrap" Text="12" VerticalAlignment="Top"/>
+                        <TextBox x:Name="RankThirteen_One" HorizontalAlignment="Left" Height="23" Margin="28,357.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" Grid.RowSpan="2" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankThirteen_X" HorizontalAlignment="Left" Height="23" Margin="64,357.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" Grid.RowSpan="2" TextChanged="ValidateRank"/>
+                        <TextBox x:Name="RankThirteen_Two" HorizontalAlignment="Left" Height="23" Margin="99,358,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" Grid.RowSpan="2" TextChanged="ValidateRank"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,357.838,0,0" TextWrapping="Wrap" Text="13" VerticalAlignment="Top"/>
+                    </Grid>
+                    <Grid x:Name="GeneralGrid" HorizontalAlignment="Left" Height="193" Margin="406,23,0,0" VerticalAlignment="Top" Width="284" Background="#FFDA0E0E">
+                        <DatePicker x:Name="WeekDatePicker" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" Width="187" FirstDayOfWeek="Monday" DisplayDate="2017-11-06"/>
+                        <TextBox x:Name="PayoutTextBox" HorizontalAlignment="Left" Height="23" Margin="10,51,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="187"/>
+                        <TextBox x:Name="PercentTextBlox" HorizontalAlignment="Left" Height="23" Margin="10,79,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="187"/>
+                        <Button x:Name="AddButton" Content="Mata In" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top" Width="187" Height="76" FontSize="48" Click="AddButton_Click"/>
+                    </Grid>
+                    <TextBlock x:Name="ErrorTextBlock" HorizontalAlignment="Left" Margin="406,221,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="191" Width="284" Foreground="#FF6E0000" FontSize="16"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

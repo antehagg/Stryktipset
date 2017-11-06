@@ -1,9 +1,10 @@
-﻿using Stryktipset.Core.Data;
+﻿using System.Collections.Generic;
+using Stryktipset.Core.Data;
 
 namespace Stryktipset.Core.Storage
 {
     interface IStoreData
     {
-        bool SaveData(Week week);
+        bool SaveData(DataContext dataContext);
     }
 }
