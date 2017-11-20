@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using Stryktipset.Core.Data;
 using Stryktipset.Core.Storage.JSON;
+using Stryktipset.WPF.Results;
 using Stryktipset.WPF.Validation.InputValidation;
 
 namespace Stryktipset.WPF
@@ -52,7 +53,35 @@ namespace Stryktipset.WPF
 
             BuildPermilleGrid();
             BuildRankGrid();
+
+            PopulateRankHitGrid();
+            PopulateSignExactDataGrid();
+            PopulateSignPercentDataGrid();
         }
+
+        #region AllDataWindow
+
+        private void PopulateRankHitGrid()
+        {
+            var model = new RankHitsModel(_dataContext.GetWeekCount(), _dataContext.Weeks);
+            RankHitsDataGrid.ItemsSource = model.RankHitRows;
+        }
+
+        private void PopulateSignExactDataGrid()
+        {
+            var model = new SignExactModel( _dataContext.Weeks);
+            SignExactDataGrid.ItemsSource = model.SignExactRows;
+        }
+
+        private void PopulateSignPercentDataGrid()
+        {
+            var model = new SignPercentModel(_dataContext.GetWeekCount(), _dataContext.Weeks);
+            SignPercentDataGrid.ItemsSource = model.SignPercentRows;
+        }
+
+        #endregion
+
+        #region CreateInputWeek
 
         private Week CreateWeek()
         {
@@ -118,6 +147,8 @@ namespace Stryktipset.WPF
             errorMessage = "All fields are not valid.";
             return mdArray;
         }
+
+        #endregion
 
         #region BuildPermilleGrid
 
@@ -299,6 +330,8 @@ namespace Stryktipset.WPF
         }
         #endregion
 
+        #region Events
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ResultErrorBlock.Text = "";
@@ -313,5 +346,7 @@ namespace Stryktipset.WPF
                 _dataContext.Save();
             }
         }
+
+        #endregion
     }
 }

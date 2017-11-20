@@ -20,7 +20,11 @@
                         <GradientStop Color="White" Offset="1"/>
                     </LinearGradientBrush>
                 </TabItem.Background>
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="RankHitsDataGrid" HorizontalAlignment="Left" Height="579" VerticalAlignment="Top" Width="187" Margin="0,10,0,0"/>
+                    <DataGrid x:Name="SignExactDataGrid" HorizontalAlignment="Left" Height="287" Margin="192,10,0,0" VerticalAlignment="Top" Width="187"/>
+                    <DataGrid x:Name="SignPercentDataGrid" HorizontalAlignment="Left" Height="287" Margin="192,302,0,0" VerticalAlignment="Top" Width="187"/>
+                </Grid>
             </TabItem>
             <TabItem Header="Input" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="53.6">
                 <Grid Background="#FFE5E5E5">
@@ -273,6 +277,9 @@
                     </Grid>
                     <TextBlock x:Name="GeneralErrorTextBlock" HorizontalAlignment="Left" Margin="454,218,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" RenderTransformOrigin="-2.599,-2.641" Height="244" Width="175"/>
                 </Grid>
+            </TabItem>
+            <TabItem Header="Search" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
+                <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
     </Grid>

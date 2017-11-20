@@ -57,6 +57,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Results\RankHitsModel.cs" />
+    <Compile Include="Results\SignExactModel.cs" />
+    <Compile Include="Results\SignPercentModel.cs" />
     <Compile Include="Validation\InputValidation\PermilleValidationRule.cs" />
     <Compile Include="Validation\InputValidation\RankValidationRule.cs" />
     <Compile Include="Validation\InputValidation\RattRadValidationRule.cs" />
