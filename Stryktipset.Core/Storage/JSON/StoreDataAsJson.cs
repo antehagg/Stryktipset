@@ -31,7 +31,6 @@ namespace Stryktipset.Core.Storage.JSON
             }
             catch (Exception e)
             {
-                var error = e.Message;
                 Log.Error(e.Message);
                 return false;
             }

@@ -57,6 +57,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Validation\InputValidation\PermilleValidationRule.cs" />
+    <Compile Include="Validation\InputValidation\RankValidationRule.cs" />
     <Compile Include="Validation\InputValidation\RattRadValidationRule.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
