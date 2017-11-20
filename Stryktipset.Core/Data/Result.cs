@@ -4,9 +4,9 @@ namespace Stryktipset.Core.Data
 {
     public class Result
     {
-        public List<string> ResultList;
+        public string[] ResultList;
 
-        public Result(List<string> resultList)
+        public Result(string[] resultList)
         {
             ResultList = resultList;
         }

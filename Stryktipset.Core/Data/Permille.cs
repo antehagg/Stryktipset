@@ -4,9 +4,9 @@ namespace Stryktipset.Core.Data
 {
     public class Permille
     {
-        public List<int> PermilleList;
+        public int[,] PermilleList;
 
-        public Permille(List<int> permilleList)
+        public Permille(int[,] permilleList)
         {
             PermilleList = permilleList;
         }

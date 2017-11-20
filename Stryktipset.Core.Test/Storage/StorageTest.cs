@@ -12,8 +12,7 @@ namespace Stryktipset.Core.Test.Storage
     {
         private StoreDataAsJson _storeDataAsJson;
         private LoadDataJson _loadDataJson;
-        private List<Week> _weeks;
-        private Week _week;
+
         [SetUp]
         public void Init()
         {

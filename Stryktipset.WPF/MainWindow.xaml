@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Stryktipset.WPF"
+        xmlns:inputValidation="clr-namespace:Stryktipset.WPF.Validation.InputValidation"
         mc:Ignorable="d"
         Title="Stryktipset" Height="650" Width="1050">
     <Grid>
@@ -21,179 +22,235 @@
                 </TabItem.Background>
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
-            <TabItem Header="Input">
-                <Grid Background="#FFE5E5E5" Margin="0,-0.519,0,0.519">
-                    <Grid x:Name="ResultGrid" Margin="10,23,939,198">
-                        <Grid.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#FFD66211" Offset="0"/>
-                                <GradientStop Color="#FFD47B0F" Offset="0.527"/>
-                            </LinearGradientBrush>
-                        </Grid.Background>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top"/>
-                        <TextBox x:Name="ResultOne" HorizontalAlignment="Left" Height="23" Margin="28,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top"/>
-                        <TextBox x:Name="ResultTwo" HorizontalAlignment="Left" Height="23" Margin="28,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31"  TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,78,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top"/>
-                        <TextBox x:Name="ResultThree" HorizontalAlignment="Left" Height="23" Margin="28,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31"  TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,106,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top"/>
-                        <TextBox x:Name="ResultFour" HorizontalAlignment="Left" Height="23" Margin="28,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31"  TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,134,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top"/>
-                        <TextBox x:Name="ResultFive" HorizontalAlignment="Left" Height="23" Margin="28,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,162,0,0" TextWrapping="Wrap" Text="6" VerticalAlignment="Top"/>
-                        <TextBox x:Name="ResultSix" HorizontalAlignment="Left" Height="23" Margin="28,162,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,190,0,0" TextWrapping="Wrap" Text="7" VerticalAlignment="Top"/>
-                        <TextBox x:Name="ResultSeven" HorizontalAlignment="Left" Height="23" Margin="28,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,218,0,0" TextWrapping="Wrap" Text="8" VerticalAlignment="Top"/>
-                        <TextBox x:Name="ResultEight" HorizontalAlignment="Left" Height="23" Margin="28,218,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,246,0,0" TextWrapping="Wrap" Text="9" VerticalAlignment="Top"/>
-                        <TextBox x:Name="ResultNine" HorizontalAlignment="Left" Height="23" Margin="28,246,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,274,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top"/>
-                        <TextBox x:Name="ResultTen" HorizontalAlignment="Left" Height="23" Margin="28,274,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,302,0,0" TextWrapping="Wrap" Text="11" VerticalAlignment="Top"/>
-                        <TextBox x:Name="ResultEleven" HorizontalAlignment="Left" Height="23" Margin="28,302,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,330,0,0" TextWrapping="Wrap" Text="12" VerticalAlignment="Top"/>
-                        <TextBox x:Name="ResultTwelve" HorizontalAlignment="Left" Height="23" Margin="28,330,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,358,0,0" TextWrapping="Wrap" Text="13" VerticalAlignment="Top"/>
-                        <TextBox x:Name="ResultThirteen" HorizontalAlignment="Right" Height="23" Margin="0,358,20,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateResultInput" TextInput="ValidateResultInput"/>
-                    </Grid>
-                    <Grid x:Name="PercentGrid" Margin="94,23,783,198">
+            <TabItem Header="Input" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="53.6">
+                <Grid Background="#FFE5E5E5">
+                    <Grid x:Name="ResultGrid" HorizontalAlignment="Left" Height="447" Margin="10,10,0,0" VerticalAlignment="Top" Width="83" Background="#FF67DA14">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="376*"/>
-                            <RowDefinition Height="13*"/>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <Grid.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                                <GradientStop Color="#FF1E9518"/>
-                                <GradientStop Color="#FF14C534" Offset="0.667"/>
-
-                            </LinearGradientBrush>
-                        </Grid.Background>
-                        <TextBox x:Name="PercentOne_One" HorizontalAlignment="Left" Height="23" Margin="28,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentOne_X" HorizontalAlignment="Left" Height="23" Margin="64,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentOne_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent" />
-                        <TextBlock HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="13"><Run Text="1"/><Run Text="&#x9;"/></TextBlock>
-                        <TextBox x:Name="PercentTwo_One" HorizontalAlignment="Left" Height="23" Margin="28,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentTwo_X" HorizontalAlignment="Left" Height="23" Margin="64,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentTwo_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top"/>
-                        <TextBox x:Name="PercentThree_One" HorizontalAlignment="Left" Height="23" Margin="28,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentThree_X" HorizontalAlignment="Left" Height="23" Margin="64,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentThree_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,78,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top"/>
-                        <TextBox x:Name="PercentFour_One" HorizontalAlignment="Left" Height="23" Margin="28,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentFour_X" HorizontalAlignment="Left" Height="23" Margin="64,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentFour_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,106,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top"/>
-                        <TextBox x:Name="PercentFive_One" HorizontalAlignment="Left" Height="23" Margin="28,133.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentFive_X" HorizontalAlignment="Left" Height="23" Margin="64,133.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentFive_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,133.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,133.953,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="13"><Run Text="5"/><Run Text="&#x9;"/></TextBlock>
-                        <TextBox x:Name="PercentSix_One" HorizontalAlignment="Left" Height="23" Margin="28,161.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentSix_X" HorizontalAlignment="Left" Height="23" Margin="64,161.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentSix_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,161.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,161.952,0,0" TextWrapping="Wrap" Text="6" VerticalAlignment="Top"/>
-                        <TextBox x:Name="PercentSeven_One" HorizontalAlignment="Left" Height="23" Margin="28,189.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentSeven_X" HorizontalAlignment="Left" Height="23" Margin="64,189.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentSeven_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,189.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,189.952,0,0" TextWrapping="Wrap" Text="7" VerticalAlignment="Top"/>
-                        <TextBox x:Name="PercentEight_One" HorizontalAlignment="Left" Height="23" Margin="28,217.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentEight_X" HorizontalAlignment="Left" Height="23" Margin="64,217.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentEight_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,217.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,217.952,0,0" TextWrapping="Wrap" Text="8" VerticalAlignment="Top"/>
-                        <TextBox x:Name="PercentNine_One" HorizontalAlignment="Left" Height="23" Margin="28,245.888,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentNine_X" HorizontalAlignment="Left" Height="23" Margin="64,245.888,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentNine_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,245.888,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,245.886,0,0" TextWrapping="Wrap" Text="9" VerticalAlignment="Top"/>
-                        <TextBox x:Name="PercentTen_One" HorizontalAlignment="Left" Height="23" Margin="28,273.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentTen_X" HorizontalAlignment="Left" Height="23" Margin="64,273.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentTen_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,273.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,273.841,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="13" Text="10"/>
-                        <TextBox x:Name="PercentEleven_One" HorizontalAlignment="Left" Height="23" Margin="28,301.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentEleven_X" HorizontalAlignment="Left" Height="23" Margin="64,301.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentEleven_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,301.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,301.838,0,0" TextWrapping="Wrap" Text="11" VerticalAlignment="Top"/>
-                        <TextBox x:Name="PercentTwelve_One" HorizontalAlignment="Left" Height="23" Margin="28,329.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentTwelve_X" HorizontalAlignment="Left" Height="23" Margin="64,329.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentTwelve_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,329.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" GotFocus="CalculateAndValidatePercent"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,329.838,0,0" TextWrapping="Wrap" Text="12" VerticalAlignment="Top"/>
-                        <TextBox x:Name="PercentThirteen_One" HorizontalAlignment="Left" Height="23" Margin="28,357.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" Grid.RowSpan="2" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentThirteen_X" HorizontalAlignment="Left" Height="23" Margin="64,357.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" Grid.RowSpan="2" TextChanged="CalculateAndValidatePercent" />
-                        <TextBox x:Name="PercentThirteen_Two" HorizontalAlignment="Left" Height="23" Margin="99,358,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="CalculateAndValidatePercent" Grid.RowSpan="2" GotFocus="CalculateAndValidatePercent"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,357.838,0,0" TextWrapping="Wrap" Text="13" VerticalAlignment="Top"/>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,0,0" />
+                        <TextBox x:Name="RrOneTextBox" Grid.Row="0" Grid.Column="1" Height="23" TextWrapping="Wrap"  Width="35" Margin="10,10,0,0">
+                            <TextBox.Text>
+                                <Binding Path="ResultArray[0]"
+                                         UpdateSourceTrigger="PropertyChanged"
+                                         ValidatesOnNotifyDataErrors="True"
+                                         ValidatesOnDataErrors="True"
+                                         NotifyOnValidationError="True">
+                                    <Binding.ValidationRules>
+                                        <inputValidation:RattRadValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
+                        <TextBlock Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Text="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,0,0" />
+                        <TextBox x:Name="RrTwoTextBox" Grid.Row="1" Grid.Column="1" Height="23" TextWrapping="Wrap" Width="35" Margin="10,10,0,0">
+                            <TextBox.Text>
+                                <Binding Path="ResultArray[1]"
+                                         UpdateSourceTrigger="PropertyChanged"
+                                         ValidatesOnNotifyDataErrors="True"
+                                         ValidatesOnDataErrors="True"
+                                         NotifyOnValidationError="True">
+                                    <Binding.ValidationRules>
+                                        <inputValidation:RattRadValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
+                        <TextBlock Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Text="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,0,0" />
+                        <TextBox x:Name="RrThreeTextBox" Grid.Row="2" Grid.Column="1" Height="23" TextWrapping="Wrap" Width="35" Margin="10,10,0,0">
+                            <TextBox.Text>
+                                <Binding Path="ResultArray[2]"
+                                         UpdateSourceTrigger="PropertyChanged"
+                                         ValidatesOnNotifyDataErrors="True"
+                                         ValidatesOnDataErrors="True"
+                                         NotifyOnValidationError="True">
+                                    <Binding.ValidationRules>
+                                        <inputValidation:RattRadValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
+                        <TextBlock Grid.Row="3" Grid.Column="0" TextWrapping="Wrap" Text="4" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,0,0" />
+                        <TextBox x:Name="RrFourTextBox" Grid.Row="3" Grid.Column="1" Height="23" TextWrapping="Wrap" Width="35" Margin="10,10,0,0">
+                            <TextBox.Text>
+                                <Binding Path="ResultArray[3]"
+                                         UpdateSourceTrigger="PropertyChanged"
+                                         ValidatesOnNotifyDataErrors="True"
+                                         ValidatesOnDataErrors="True"
+                                         NotifyOnValidationError="True">
+                                    <Binding.ValidationRules>
+                                        <inputValidation:RattRadValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
+                        <TextBlock Grid.Row="4" Grid.Column="0" TextWrapping="Wrap" Text="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,0,0" />
+                        <TextBox x:Name="RrFiveTextBox" Grid.Row="4" Grid.Column="1" Height="23" TextWrapping="Wrap" Width="35" Margin="10,10,0,0">
+                            <TextBox.Text>
+                                <Binding Path="ResultArray[4]"
+                                         UpdateSourceTrigger="PropertyChanged"
+                                         ValidatesOnNotifyDataErrors="True"
+                                         ValidatesOnDataErrors="True"
+                                         NotifyOnValidationError="True">
+                                    <Binding.ValidationRules>
+                                        <inputValidation:RattRadValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
+                        <TextBlock Grid.Row="5" Grid.Column="0" TextWrapping="Wrap" Text="6" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,0,0" />
+                        <TextBox x:Name="RrSixTextBox" Grid.Row="5" Grid.Column="1" Height="23" TextWrapping="Wrap" Width="35" Margin="10,10,0,0">
+                            <TextBox.Text>
+                                <Binding Path="ResultArray[5]"
+                                         UpdateSourceTrigger="PropertyChanged"
+                                         ValidatesOnNotifyDataErrors="True"
+                                         ValidatesOnDataErrors="True"
+                                         NotifyOnValidationError="True">
+                                    <Binding.ValidationRules>
+                                        <inputValidation:RattRadValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
+                        <TextBlock Grid.Row="6" Grid.Column="0" TextWrapping="Wrap" Text="7" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,0,0" />
+                        <TextBox x:Name="RrSevenTextBox" Grid.Row="6" Grid.Column="1" Height="23" TextWrapping="Wrap" Width="35" Margin="10,10,0,0">
+                            <TextBox.Text>
+                                <Binding Path="ResultArray[6]"
+                                         UpdateSourceTrigger="PropertyChanged"
+                                         ValidatesOnNotifyDataErrors="True"
+                                         ValidatesOnDataErrors="True"
+                                         NotifyOnValidationError="True">
+                                    <Binding.ValidationRules>
+                                        <inputValidation:RattRadValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
+                        <TextBlock Grid.Row="7" Grid.Column="0" TextWrapping="Wrap" Text="8" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,0,0" />
+                        <TextBox x:Name="RrEightTextBox" Grid.Row="7" Grid.Column="1" Height="23" TextWrapping="Wrap" Width="35" Margin="10,10,0,0">
+                            <TextBox.Text>
+                                <Binding Path="ResultArray[7]"
+                                         UpdateSourceTrigger="PropertyChanged"
+                                         ValidatesOnNotifyDataErrors="True"
+                                         ValidatesOnDataErrors="True"
+                                         NotifyOnValidationError="True">
+                                    <Binding.ValidationRules>
+                                        <inputValidation:RattRadValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
+                        <TextBlock Grid.Row="8" Grid.Column="0" TextWrapping="Wrap" Text="9" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,0,0" />
+                        <TextBox x:Name="RrSNineTextBox" Grid.Row="8" Grid.Column="1" Height="23" TextWrapping="Wrap" Width="35" Margin="10,10,0,0">
+                            <TextBox.Text>
+                                <Binding Path="ResultArray[8]"
+                                         UpdateSourceTrigger="PropertyChanged"
+                                         ValidatesOnNotifyDataErrors="True"
+                                         ValidatesOnDataErrors="True"
+                                         NotifyOnValidationError="True">
+                                    <Binding.ValidationRules>
+                                        <inputValidation:RattRadValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
+                        <TextBlock Grid.Row="9" Grid.Column="0" TextWrapping="Wrap" Text="10" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,0,0" />
+                        <TextBox x:Name="RrTenTextBox" Grid.Row="9" Grid.Column="1" Height="23" TextWrapping="Wrap" Width="35" Margin="10,10,0,0">
+                            <TextBox.Text>
+                                <Binding Path="ResultArray[9]"
+                                         UpdateSourceTrigger="PropertyChanged"
+                                         ValidatesOnNotifyDataErrors="True"
+                                         ValidatesOnDataErrors="True"
+                                         NotifyOnValidationError="True">
+                                    <Binding.ValidationRules>
+                                        <inputValidation:RattRadValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
+                        <TextBlock Grid.Row="10" Grid.Column="0" TextWrapping="Wrap" Text="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,0,0" />
+                        <TextBox x:Name="RrElevenTextBox" Grid.Row="10" Grid.Column="1" Height="23" TextWrapping="Wrap" Width="35" Margin="10,10,0,0">
+                            <TextBox.Text>
+                                <Binding Path="ResultArray[10]"
+                                         UpdateSourceTrigger="PropertyChanged"
+                                         ValidatesOnNotifyDataErrors="True"
+                                         ValidatesOnDataErrors="True"
+                                         NotifyOnValidationError="True">
+                                    <Binding.ValidationRules>
+                                        <inputValidation:RattRadValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
+                        <TextBlock Grid.Row="11" Grid.Column="0" TextWrapping="Wrap" Text="12" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,0,0" />
+                        <TextBox x:Name="RrTwelveTextBox" Grid.Row="11" Grid.Column="1" Height="23" TextWrapping="Wrap" Width="35" Margin="10,10,0,0">
+                            <TextBox.Text>
+                                <Binding Path="ResultArray[11]"
+                                         UpdateSourceTrigger="PropertyChanged"
+                                         ValidatesOnNotifyDataErrors="True"
+                                         ValidatesOnDataErrors="True"
+                                         NotifyOnValidationError="True">
+                                    <Binding.ValidationRules>
+                                        <inputValidation:RattRadValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
+                        <TextBlock Grid.Row="12" Grid.Column="0" TextWrapping="Wrap" Text="13" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,0,0" />
+                        <TextBox x:Name="RrThirteenTextBox" Grid.Row="12" Grid.Column="1" Height="23" TextWrapping="Wrap" Width="35" Margin="10,10,0,0">
+                            <TextBox.Text>
+                                <Binding Path="ResultArray[12]"
+                                         UpdateSourceTrigger="PropertyChanged"
+                                         ValidatesOnNotifyDataErrors="True"
+                                         ValidatesOnDataErrors="True"
+                                         NotifyOnValidationError="True">
+                                    <Binding.ValidationRules>
+                                        <inputValidation:RattRadValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
                     </Grid>
-                    <Grid x:Name="RankGrid" Margin="250,23,627,198">
+                    
+                    <Grid x:Name="PermilleGrid" HorizontalAlignment="Left" Height="447" Margin="98,10,0,0" VerticalAlignment="Top" Width="173" Background="#FF008CFF">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="376*"/>
-                            <RowDefinition Height="13*"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <Grid.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                                <GradientStop Color="#FFE6BF0F"/>
-                                <GradientStop Color="#FFEEE30E" Offset="0.667"/>
-
-                            </LinearGradientBrush>
-                        </Grid.Background>
-                        <TextBox x:Name="RankOne_One" HorizontalAlignment="Left" Height="23" Margin="28,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank" />
-                        <TextBox x:Name="RankOne_X" HorizontalAlignment="Left" Height="23" Margin="64,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankOne_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top"/>
-                        <TextBox x:Name="RankTwo_One" HorizontalAlignment="Left" Height="23" Margin="28,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankTwo_X" HorizontalAlignment="Left" Height="23" Margin="64,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankTwo_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top"/>
-                        <TextBox x:Name="RankThree_One" HorizontalAlignment="Left" Height="23" Margin="28,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankThree_X" HorizontalAlignment="Left" Height="23" Margin="64,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankThree_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,78,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top"/>
-                        <TextBox x:Name="RankFour_One" HorizontalAlignment="Left" Height="23" Margin="28,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankFour_X" HorizontalAlignment="Left" Height="23" Margin="64,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankFour_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,106,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top"/>
-                        <TextBox x:Name="RankFive_One" HorizontalAlignment="Left" Height="23" Margin="28,133.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankFive_X" HorizontalAlignment="Left" Height="23" Margin="64,133.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankFive_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,133.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,133.953,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top"/>
-                        <TextBox x:Name="RankSix_One" HorizontalAlignment="Left" Height="23" Margin="28,161.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankSix_X" HorizontalAlignment="Left" Height="23" Margin="64,161.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankSix_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,161.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,161.952,0,0" TextWrapping="Wrap" Text="6" VerticalAlignment="Top"/>
-                        <TextBox x:Name="RankSeven_One" HorizontalAlignment="Left" Height="23" Margin="28,189.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankSeven_X" HorizontalAlignment="Left" Height="23" Margin="64,189.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankSeven_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,189.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,189.952,0,0" TextWrapping="Wrap" Text="7" VerticalAlignment="Top"/>
-                        <TextBox x:Name="RankEight_One" HorizontalAlignment="Left" Height="23" Margin="28,217.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankEight_X" HorizontalAlignment="Left" Height="23" Margin="64,217.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankEight_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,217.953,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,217.952,0,0" TextWrapping="Wrap" Text="8" VerticalAlignment="Top"/>
-                        <TextBox x:Name="RankNine_One" HorizontalAlignment="Left" Height="23" Margin="28,245.888,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankNine_X" HorizontalAlignment="Left" Height="23" Margin="64,245.888,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankNine_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,245.888,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,245.886,0,0" TextWrapping="Wrap" Text="9" VerticalAlignment="Top"/>
-                        <TextBox x:Name="RankTen_One" HorizontalAlignment="Left" Height="23" Margin="28,273.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankTen_X" HorizontalAlignment="Left" Height="23" Margin="64,273.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankTen_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,273.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,273.841,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="13" Text="10"/>
-                        <TextBox x:Name="RankEleven_One" HorizontalAlignment="Left" Height="23" Margin="28,301.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankEleven_X" HorizontalAlignment="Left" Height="23" Margin="64,301.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankEleven_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,301.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,301.838,0,0" TextWrapping="Wrap" Text="11" VerticalAlignment="Top"/>
-                        <TextBox x:Name="RankTwelve_One" HorizontalAlignment="Left" Height="23" Margin="28,329.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankTwelve_X" HorizontalAlignment="Left" Height="23" Margin="64,329.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankTwelve_Two" HorizontalAlignment="Left" Height="23" Margin="98.88,329.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" TextChanged="ValidateRank"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,329.838,0,0" TextWrapping="Wrap" Text="12" VerticalAlignment="Top"/>
-                        <TextBox x:Name="RankThirteen_One" HorizontalAlignment="Left" Height="23" Margin="28,357.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" Grid.RowSpan="2" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankThirteen_X" HorizontalAlignment="Left" Height="23" Margin="64,357.841,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" Grid.RowSpan="2" TextChanged="ValidateRank"/>
-                        <TextBox x:Name="RankThirteen_Two" HorizontalAlignment="Left" Height="23" Margin="99,358,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" Grid.RowSpan="2" TextChanged="ValidateRank"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,357.838,0,0" TextWrapping="Wrap" Text="13" VerticalAlignment="Top"/>
+                        <StackPanel x:Name="PermilleOneStackPanel" Grid.Row="0" HorizontalAlignment="Left" Height="23" Margin="0,10,0,0" VerticalAlignment="Top" Width="173" Orientation="Horizontal">
+                            <TextBlock TextWrapping="Wrap" Text="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,0,0" />
+                            <TextBox Height="23" Width="35" TextWrapping="Wrap" Text="TextBox" Margin="10,0,0,0"/>
+                            <TextBox Height="23" Width="35" TextWrapping="Wrap" Text="TextBox" Margin="10,0,0,0"/>
+                            <TextBox Height="23" Width="35" TextWrapping="Wrap" Text="TextBox" Margin="10,0,0,0"/>
+                        </StackPanel>
                     </Grid>
-                    <Grid x:Name="GeneralGrid" HorizontalAlignment="Left" Height="193" Margin="406,23,0,0" VerticalAlignment="Top" Width="284" Background="#FFDA0E0E">
-                        <DatePicker x:Name="WeekDatePicker" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" Width="187" FirstDayOfWeek="Monday" DisplayDate="2017-11-06"/>
-                        <TextBox x:Name="PayoutTextBox" HorizontalAlignment="Left" Height="23" Margin="10,51,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="187"/>
-                        <TextBox x:Name="PercentTextBlox" HorizontalAlignment="Left" Height="23" Margin="10,79,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="187"/>
-                        <Button x:Name="AddButton" Content="Mata In" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top" Width="187" Height="76" FontSize="48" Click="AddButton_Click"/>
-                    </Grid>
-                    <TextBlock x:Name="ErrorTextBlock" HorizontalAlignment="Left" Margin="406,221,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="191" Width="284" Foreground="#FF6E0000" FontSize="16"/>
                 </Grid>
             </TabItem>
         </TabControl>

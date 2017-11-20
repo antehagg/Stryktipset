@@ -51,6 +51,7 @@
     <Compile Include="Data\Rank.cs" />
     <Compile Include="Data\Result.cs" />
     <Compile Include="Data\Week.cs" />
+    <Compile Include="Filter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Storage\IStoreData.cs" />
     <Compile Include="Storage\JSON\LoadDataJson.cs" />
